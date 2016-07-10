@@ -1,10 +1,12 @@
-## Issues Tracker
+## Angular Bee Game
 
-The purpose of this tracker is to demonstrate usage of an angular service combined with data binding between the model and the view.
+The aim of the game is to take the bees health down by clicking the attack button.
+
+## Rules
+
+For now you either win by eliminating the Queens health before the other bee types OR by eliminating the worker bee and drone bee's HP first.
+I'll add ways in which the user can lose soon.
 
 ## Installation
 
-No need to install, I've configured it so the end point uses a hosted JSON file so Chrome can run the file locally.
-
-
-
+No need to install, I've configured so Chrome can run the file locally for now.
