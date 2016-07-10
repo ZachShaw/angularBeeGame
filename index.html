@@ -1,0 +1,91 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Angular Bee App</title>
+
+	    <!-- CSS -->
+	    <link rel="stylesheet" type="text/css" href="css/style.css">
+	    <link rel="stylesheet" type="text/css" href="css/grid.css">
+	    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+
+	    <!-- JS -->
+	    <script src="angular.min.js"></script>
+	    <script src="app.js"></script>
+
+	</head>
+	<body>
+		<div class="container" ng-app="beeApp" ng-controller="mainController">
+			<section class="button-section">
+				<div class="row">
+					<div class="button-wrapper">
+						<a href="#" class="btn btn-ghost first" ng-click="resetGame()">New Game</a>
+						<a href="#" class="btn btn-ghost first" ng-click="damage()">Attack Bee</a>
+					</div>
+				</div>
+			</section>
+			<section class="queen-bee-section">
+				<div class="row box">
+					<div class="queen-bee-wrapper" ng-repeat="queenBee in enemyBees | filter: queenBee.type='queenBee'">
+						<div class="queen-bee">
+							<div class="queenbee-icon">
+							</div>
+							<div class="bee-header">
+								<h3>
+									Queen Bee
+								</h3>
+							</div>
+							<div class="bee-health">
+								<h3>
+									{{ queenBee.health }} HP
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="worker-bee-section">
+				<div class="row">
+					<div class="col span-1-of-5 worker-bee" ng-repeat="workerBee in enemyBees | filter: workerBee.type='workerBee'">
+						<div class="worker-bee">
+							<div class="workerbee-icon">
+							</div>
+							<div class="bee-header">
+								<h3 >
+									Worker Bee
+								</h3>
+							</div>
+							<div>
+								<h3 class="bee-health">
+									{{ workerBee.health }} HP
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="drone-bee-section">
+				<div class="row">
+					<div class="drone-bee-wrapper col span-1-of-8" ng-repeat="droneBee in enemyBees | filter: droneBee.type='droneBee'">
+						<div class="drone-bee">
+							<div class="dronebee-icon">
+							</div>
+							<div class="bee-header">
+								<h3>
+									Drone Bee
+								</h3>
+							</div>
+							<div class="bee-health">
+								<h3>
+									{{ droneBee.health }} HP
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>
